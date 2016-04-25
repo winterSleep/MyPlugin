@@ -46,6 +46,7 @@
                 <param name="android-package" value="org.apache.cordova.shard.MyPlugin"/>
             </feature>
         </config-file>
+        <source-file src="src/android/MyPlugin.java" target-dir="src/org/apache/cordova/myplugin" />
     </platform>
 
     <!-- ios -->

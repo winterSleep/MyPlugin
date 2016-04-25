@@ -1,4 +1,4 @@
-package com.example.hello;
+package org.apache.cordova.myplugin;
 
 import android.util.Log;
 
