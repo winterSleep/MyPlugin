@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-myPlugin.myPlugin", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,8 +20,7 @@
  *
 */
 
-
-var myPlugin = {};
+var myPlugin = function(){};
 
 /**
 * Removes contact from device storage.
@@ -32,3 +32,5 @@ myPlugin.prototype.test = function(successCB, errorCB) {
 };
 
 module.exports = myPlugin;
+
+});
