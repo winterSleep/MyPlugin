@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest"
+    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+    id="cordova-plugin-myPlugin"
+    version="1.0.0">
+
+    <name>MyPlugin</name>
+    <description>Cordova Contacts Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>MyPlugin,contacts</keywords>
+    <repo>https://github.com/winterSleep/MyPlugin.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320652</issue>
+
+    <dependency id="cordova-plugin-compat" version="^1.0.0" />
+
+    <js-module src="www/myPlugin.js" name="myPlugin">
+        <clobbers target="navigator.myPlugin" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Contacts">
+                <param name="android-package" value="org.apache.cordova.shard.MyPlugin"/>
+            </feature>
+        </config-file>
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyPlugin">
+                <param name="ios-package" value="MyPlugin"/>
+            </feature>
+        </config-file>
+
+        <js-module src="www/myPlugin.js" name="myPlugin-ios">
+            <merges target="navigator.myPlugin" />
+        </js-module>
+	
+        <header-file src="src/ios/MyPlugin.h" />
+        <source-file src="src/ios/MyPlugin.m" />
+	
+    </platform>
+</plugin>
