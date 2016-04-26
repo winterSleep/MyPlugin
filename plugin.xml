@@ -52,14 +52,10 @@
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="MyPlugin">
+            <feature name="myPlugin">
                 <param name="ios-package" value="MyPlugin"/>
             </feature>
         </config-file>
-
-        <js-module src="www/myPlugin.js" name="myPlugin-ios">
-            <merges target="navigator.myPlugin" />
-        </js-module>
 	
         <header-file src="src/ios/MyPlugin.h" />
         <source-file src="src/ios/MyPlugin.m" />
