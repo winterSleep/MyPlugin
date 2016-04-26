@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-myPlugin.myPlugin", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -20,6 +19,7 @@ cordova.define("cordova-plugin-myPlugin.myPlugin", function(require, exports, mo
  *
 */
 
+var exec = require('cordova/exec');
 var myPlugin = function(){};
 
 /**
@@ -28,9 +28,7 @@ var myPlugin = function(){};
 * @param errorCB error callback
 */
 myPlugin.prototype.test = function(successCB, errorCB) {
-    exec(successCB, fail, "MyPlugin", "test", []);
+    exec(successCB, errorCB, "myPlugin", "test", []);
 };
 
 module.exports = myPlugin;
-
-});
